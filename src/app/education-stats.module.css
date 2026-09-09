@@ -1,0 +1,7 @@
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.card { min-height: 250px; display: flex; flex-direction: column; padding: 1.5rem; background: var(--cream); color: var(--ink); border-top: 5px solid var(--forest); }
+.card:nth-child(2) { border-color: var(--terracotta); }.card:nth-child(3) { border-color: var(--ink); }
+.level { margin: 0 0 2rem; font-family: var(--mono); font-size: .68rem; font-weight: bold; letter-spacing: .08em; text-transform: uppercase; }
+.card h3 { margin: 0 0 .55rem; font-size: 1.25rem; line-height: 1.2; }.detail { margin: 0; font-size: .86rem; line-height: 1.45; }
+.score { margin: auto 0 0; font-family: var(--display); font-size: clamp(3.6rem, 6vw, 5.8rem); line-height: .8; letter-spacing: -.03em; }.score small { font-family: var(--mono); font-size: .64rem; letter-spacing: .04em; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; }.card { min-height: 205px; }.level { margin-bottom: 1.25rem; }.score { font-size: 4.4rem; } }
