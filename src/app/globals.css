@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root { --cream:#fff6f0; --ink:#161712; --forest:#005c2b; --sage:#e4ece2; --terracotta:#c8896c; --cream-text:#fffaf5; --display:Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; --body:Arial, Helvetica, sans-serif; --mono:"Courier New", Courier, monospace; }
+:root { --cream:#fff6f0; --ink:#161712; --forest:#005e2d; --sage:#e4ece2; --terracotta:#c8896c; --cream-text:#fffaf5; --display:Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; --body:Arial, Helvetica, sans-serif; --mono:"Courier New", Courier, monospace; }
 * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--cream); color:var(--ink); font-family:var(--body); } a { color:inherit; text-decoration:none; }
 .wrap { width:min(1400px, calc(100% - 8vw)); margin:0 auto; }.section-cream { background:var(--cream); }.section-ink { background:var(--ink); color:var(--cream-text); }.section-sage { background:var(--sage); }
 .eyebrow,.section-number,.project-type,.date,.nav-links,.map-label,.map-foot,.principles,.orbit-caption,.footer-bottom { font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; }
