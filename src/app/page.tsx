@@ -1,49 +1,74 @@
 import Image from "next/image";
+
 import EducationStats from "./education-stats";
 import ExperienceYears from "./experience-years";
 
 const projects = [
-  { type: "Enterprise security platform", name: "Deloitte - ACL Restructuring Platform", description: "Modernized authentication and authorization across enterprise applications, tools, and APIs. Designed a centralized RBAC model to simplify user-role-permission mapping and improve maintainability.", stack: "RBAC | Authentication | Authorization | APIs", graphic: "chart" },
-  { type: "API platform", name: "Johnson & Johnson - Core Module", description: "Built scalable FastAPI services with SQLAlchemy, Pydantic, and Alembic. Delivered Azure Entra ID authentication, secure AWS S3 uploads, Dockerized services, and EKS deployments.", stack: "FastAPI | AWS EKS | Azure Entra ID | PostgreSQL", graphic: "mobile" },
-  { type: "NLP automation", name: "Johnson & Johnson - CSC Validator", description: "Developed a Flask automation engine that scored 10,000+ knowledge articles using NLP and machine learning, reducing manual evaluation effort by 90%.", stack: "Flask | NLTK | Scikit-learn | AWS RDS", graphic: "chart" },
-  { type: "Workflow automation", name: "Johnson & Johnson - MuleSoft Automation", description: "Automated incident processing, MTTR and MTTC reporting, and dashboard generation. Reduced monthly report preparation time by 75%.", stack: "Python | Pandas | Chart.js | Beautiful Soup", graphic: "mobile" },
-  { type: "Cloud application", name: "Azure OSS Organization App", description: "Built and optimized Django REST APIs, improved Azure Cognitive Search accuracy by 40%, and automated background workflows with Azure Functions.", stack: "Django | Azure Functions | MSAL | Azure DevOps", graphic: "chart" },
+  { type: "Enterprise access control & agentic AI", name: "ACL Restructuring & AI Platform", description: "Engineered a centralized RBAC framework with Python, Django, and GraphQL, standardizing Role–Permission–Resource–Action mappings and reusable authorization decorators. Built conversational analytics and SEO agents with multi-agent validation and safety guardrails.", stack: "Python | Django | GraphQL | RBAC | LangGraph | React", graphic: "chart" },
+  { type: "Cloud-native API platform", name: "Clinical Studio Core Module", description: "Built FastAPI services with SQLAlchemy, Pydantic, and Alembic, reducing cross-module integration issues by 30%. Delivered Entra ID and JWT authorization, secure S3 uploads through IRSA, and Dockerized EKS deployments with Kubernetes and Helm. Improved application performance by 25%.", stack: "FastAPI | SQLAlchemy | Azure Entra ID | AWS S3 & EKS | Helm | Pytest", graphic: "mobile" },
+  { type: "NLP automation & full-stack delivery", name: "CSC Validator Application", description: "Developed a Flask engine to score 10,000+ knowledge articles using NLP and machine learning, reducing manual evaluation effort by 90% with less than 3% misclassification. Extended a production React application with reusable UI components and audit workflows.", stack: "Flask | React | NLTK | Scikit-learn | PostgreSQL", graphic: "chart" },
+  { type: "ETL & incident analytics", name: "MuleSoft Automation Application", description: "Built scheduled Python services and ETL pipelines to normalize incident data, calculate MTTR and MTTC, and generate analysis-ready CSV files. Delivered Chart.js dashboards and automated Excel reports, reducing monthly reporting effort by 75%.", stack: "Python | Pandas | REST APIs | ETL | Chart.js", graphic: "mobile" },
+  { type: "Cloud application & search", name: "Azure OSS Organization App", description: "Built Django REST APIs and improved search accuracy by 40% with Azure Cognitive Search. Implemented MSAL and Microsoft Graph authentication, automated workflows with Azure Functions, and reduced deployment time by 60% through Azure DevOps pipelines.", stack: "Django | Azure Functions | Cognitive Search | MSAL | Azure DevOps", graphic: "chart" },
 ];
 
 const experience = [
-  { date: "Jan 2026 - Present", role: "Software Engineer", company: "Talentica Software, Remote", description: "Driving end-to-end solution design and implementation for enterprise authentication and authorization modernization." },
-  { date: "Jul 2022 - Jan 2026", role: "Senior Software Engineer", company: "LTIMindtree, Hyderabad", description: "Delivered API-driven, cloud-native applications, workflow automation, NLP systems, and secure Azure and AWS integrations for enterprise clients." },
+  { date: "Feb 2026 - Present", role: "Software Engineer II", company: "Talentica Software, Remote", description: "Building enterprise access control and full-stack agentic AI applications. Designed reusable Django and GraphQL authorization, and developed conversational analytics and SEO automation with LangGraph, ReAct, RAG, and React." },
+  { date: "Jul 2022 - Jan 2026", role: "Senior Software Engineer", company: "LTM, Hyderabad", description: "Delivered Python APIs, React application enhancements, NLP automation, and ETL analytics. Built secure AWS and Azure integrations, optimized databases and asynchronous services, and shipped containerized applications through CI/CD and Kubernetes." },
 ];
 
 const skillGroups = [
-  { title: "Languages", items: ["Python", "Java", "SQL", "JavaScript", "HTML", "CSS"] },
-  { title: "Backend", items: ["FastAPI", "Flask", "Django", "SQLAlchemy", "Alembic", "REST APIs"] },
-  { title: "Cloud & DevOps", items: ["AWS", "Azure", "Docker", "Kubernetes", "Jenkins", "Azure DevOps"] },
-  { title: "Data & Agentic AI", items: ["PostgreSQL", "MySQL", "Pandas", "NLTK", "Scikit-learn", "Agentic AI", "LangChain", "LangGraph", "RAG", "LLM Tool Calling"] },
+  { title: "Languages", items: ["Python", "SQL", "JavaScript", "HTML", "CSS"] },
+  { title: "Backend & APIs", items: ["FastAPI", "Django", "Flask", "SQLAlchemy", "Alembic", "REST APIs", "GraphQL"] },
+  { title: "Frontend", items: ["React", "Chart.js"] },
+  { title: "Generative & Agentic AI", items: ["LangGraph", "LangChain", "RAG", "LLMs", "ReAct", "Multi-Agent Systems", "Tool Calling", "Text-to-SQL", "Agent Orchestration"] },
+  { title: "Databases", items: ["PostgreSQL", "MySQL", "Azure SQL"] },
+  { title: "Cloud & DevOps", items: ["AWS EC2 / S3 / RDS / EKS", "Azure Functions / App Service", "Azure Entra ID", "Azure Key Vault", "Azure Cognitive Search", "Docker", "Kubernetes", "Helm", "Jenkins", "Git", "Azure DevOps", "SonarQube"] },
+  { title: "Data & Automation", items: ["ETL", "Pandas", "Selenium", "Beautiful Soup", "NLTK", "Scikit-learn"] },
+  { title: "Engineering & Security", items: ["OOP", "DSA", "System Design", "Distributed Systems", "Database Optimization", "RBAC", "JWT", "OAuth 2.0", "API Security", "Pytest", "Agile / Scrum"] },
 ];
 
-const personalProjects = [
+const platformProjects = [
   {
     number: "01",
     label: "AI-ASSISTED SEO INTELLIGENCE",
     title: "SEO Compass",
     summary: "An evidence-first SEO auditing and safe-remediation workspace that turns a live website into a prioritized, developer-ready improvement plan.",
     highlights: ["Crawls JavaScript-rendered pages and scores technical, on-page, structured-data, performance, and mobile signals.", "Separates deterministic evidence from AI explanation, prioritization, and bounded remediation support.", "Maps issues to likely source files, validates changes, and can create draft pull requests for human review."],
-    stack: ["FastAPI", "Streamlit", "Playwright", "LangGraph", "Chroma", "RAG", "Lighthouse", "Pydantic"],
+    stack: ["FastAPI", "React", "Playwright", "LangGraph", "ReAct", "RAG", "Lighthouse", "Pydantic"],
     flow: ["URL", "CRAWL", "EVIDENCE", "ACTION"],
     image: "/images/seo-compass-visual.png",
+    imageWidth: 1536,
+    imageHeight: 1024,
     imageAlt: "An SEO audit workspace with health score, crawl signals, and growth chart",
   },
   {
     number: "02",
     label: "AGENTIC ANALYTICS + ETL",
-    title: "Data Analytics & ETL Copilot",
+    title: "Data Agent ? Analytics & ETL Copilot",
     summary: "A conversational data assistant for natural-language analytics, authenticated API extraction, data transformation, and on-demand reporting over a PostgreSQL ride-hailing dataset.",
     highlights: ["Routes requests between SQL analytics, ETL processing, and general conversational support.", "Generates transparent, validated read-only SQL and returns business-friendly insights.", "Exports CSV, JSON, or Parquet only on request, with configurable API authentication and predictable error handling."],
-    stack: ["Python", "LangChain", "LangGraph", "Google Gemini", "PostgreSQL", "Pandas", "Streamlit", "FastAPI"],
+    stack: ["Python", "React", "LangChain", "LangGraph", "Text-to-SQL", "PostgreSQL", "Pandas", "FastAPI"],
     flow: ["ASK", "ROUTE", "QUERY", "INSIGHT"],
     image: "/images/data-copilot-visual.png",
+    imageWidth: 1536,
+    imageHeight: 1024,
     imageAlt: "An agentic data workflow connecting sources, orchestration, validation, and analytics outputs",
+  },
+];
+
+const personalProjects = [
+  {
+    number: "01",
+    label: "MULTI-AGENT REPOSITORY INTELLIGENCE",
+    title: "Orion",
+    summary: "A conversational GitHub repository assistant that helps developers understand codebases, pull requests, commits, and issues, and turn source evidence into high-level implementation plans.",
+    highlights: ["Coordinates four specialist roles through validated task dependencies, running independent investigations in parallel.", "Retrieves read-only GitHub evidence and synthesizes source-linked answers with explicit coverage limits.", "Preserves repository-bound chat history and compacted context, with live progress, pinned chats, and answer feedback."],
+    stack: ["Python", "FastAPI", "LangChain", "LangGraph", "Google Gemini", "React", "PostgreSQL", "SQLAlchemy"],
+    flow: ["ASK", "PLAN", "INVESTIGATE", "ANSWER"],
+    image: "/images/orion-home.png",
+    imageWidth: 1917,
+    imageHeight: 847,
+    imageAlt: "Orion homepage with repository selection, a chat composer, and prompts for exploring pull requests, codebase, and history",
   },
 ];
 
@@ -83,23 +108,32 @@ function TechSystemGraphic() {
 
 export default function Home() {
   return <main>
-    <section className="hero section-cream" id="top">
-      <div className="nav-shell"><nav className="nav wrap" aria-label="Main navigation"><a className="wordmark" href="#top">GOWRI VIVEK KANDREGULA</a><div className="nav-links"><a href="#about">About</a><a href="#personal-projects">Personal projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav></div>
-      <div className="hero-content wrap"><div className="hero-copy"><p className="eyebrow">PYTHON BACKEND ENGINEER</p><h1>BACKEND<br />SYSTEMS<br />BUILT TO SCALE.</h1><p className="intro">I am Gowri Vivek Kandregula, a Python developer with <ExperienceYears /> of experience building secure, scalable, API-driven applications and cloud-native systems.</p><div className="hero-actions"><a className="button button-solid" href="#work">Explore work <Arrow /></a><a className="button button-ghost" href="mailto:gowrivivek07@gmail.com">Email me</a></div></div><div className="hero-art"><div className="profile-frame"><Image src="/images/gowri-profile.jpg" alt="Gowri Vivek Kandregula" width={752} height={1016} priority sizes="(max-width: 800px) 100vw, 45vw" /></div><div className="intention-card">SECURE BY<br />DESIGN<span /></div></div></div>
+    <section className="hero hero-editorial" id="top" aria-labelledby="hero-title">
+      <nav className="editorial-nav wrap" aria-label="Main navigation">
+        <a className="editorial-wordmark" href="#top" aria-label="Gowri Vivek Kandregula, home">Gowri Vivek<span aria-hidden="true">.</span></a>
+        <div className="editorial-nav-links"><a href="#top" aria-current="page">Home</a><a href="#about">About</a><a href="#work">Projects</a><a href="#personal-projects">Personal work</a></div>
+        <a className="editorial-contact" href="mailto:gowrivivek07@gmail.com">Get in touch <span aria-hidden="true">&#8599;</span></a>
+      </nav>
+      <div className="editorial-portrait" aria-hidden="true" />
+      <div className="editorial-content wrap">
+        <div className="editorial-heading"><p className="editorial-greeting">Hey, I&apos;m Gowri.</p><h1 id="hero-title">Python<br />Full-Stack<br /><span>Developer.</span></h1></div>
+        <div className="editorial-intro"><p className="editorial-statement">Thoughtful code.<br />Reliable systems.</p><p>From secure APIs to intuitive interfaces and agentic AI &mdash; I build software that brings it all together.</p><a className="editorial-work-link" href="#work">Explore my work <span aria-hidden="true">&#8599;</span></a></div>
+      </div>
+      <div className="editorial-bottom wrap"><p><span className="editorial-status" aria-hidden="true" />Python &middot; React &middot; Cloud &middot; Agentic AI</p><a href="#about">A little more about me <span aria-hidden="true">&#8595;</span></a></div>
     </section>
 
-    <section className="about section-ink" id="about"><div className="wrap two-column about-layout"><div><p className="section-number">01 / ABOUT</p><div className="about-summary"><p className="about-copy">I am a Python backend developer with <ExperienceYears /> of experience designing scalable, API-driven applications with FastAPI, Flask, and Django. I build secure, high-performance services across AWS and Azure, from clean REST APIs and SQL-backed data models to cloud-native production systems.</p><p>I enjoy solving complex backend problems end to end: modeling the domain with strong OOP and design patterns, building event-driven and distributed workflows, optimizing performance, and shipping reliable software with a focus on clarity and maintainability.</p></div><div className="about-capabilities"><span><b>BUILD</b>FastAPI, Flask, Django, REST APIs, SQL</span><span><b>ARCHITECT</b>OOP, event-driven systems, distributed systems, system design</span><span><b>SHIP</b>Unit testing, CI/CD, Docker, Kubernetes, Agile delivery</span></div><div className="principles"><span><ExperienceYears /><br /><b>professional experience</b></span><span>300+ problems<br /><b>DSA and Python practice</b></span><span>50+ hours/month<br /><b>operations automated</b></span></div></div><ProcessGraphic /></div></section>
+    <section className="about section-ink" id="about"><div className="wrap two-column about-layout"><div><p className="section-number">01 / ABOUT</p><div className="about-summary"><p className="about-copy">I build full-stack applications with Python, FastAPI, Django, Flask, React, and SQL. With <ExperienceYears /> of experience across AWS and Azure, I work on secure APIs, microservices, database optimization, and reliable cloud-native delivery.</p><p>My recent work combines enterprise authorization with Generative AI and Agentic AI: building RBAC frameworks and multi-agent applications using LangGraph, LangChain, RAG, ReAct, and LLM tool calling. I bring a foundation in OOP, data structures, system design, and distributed systems to the full development lifecycle.</p></div><div className="about-capabilities"><span><b>BUILD</b>Python, FastAPI, Django, Flask, React, SQL</span><span><b>ARCHITECT</b>Microservices, system design, RBAC, multi-agent orchestration</span><span><b>SHIP</b>Pytest, CI/CD, Docker, Kubernetes, AWS, Azure</span></div><div className="principles"><span><ExperienceYears /><br /><b>professional experience</b></span><span>350+ problems<br /><b>DSA and Python practice</b></span><span>50+ hours/month<br /><b>operations automated</b></span></div></div><ProcessGraphic /></div></section>
 
-    <section className="section-cream work" id="work"><div className="wrap"><div className="section-heading"><p className="section-number">02 / PROJECTS</p><p className="text-link">Enterprise systems and automation</p></div><div className="project-list">{projects.map((project) => <article className="project" key={project.name}><ProjectGraphic type={project.graphic} /><div className="project-copy"><p className="project-type">{project.type}</p><h2>{project.name}</h2><p>{project.description}</p><small>{project.stack}</small></div></article>)}</div></div></section>
+    <section className="section-cream work" id="work"><div className="wrap"><div className="section-heading"><p className="section-number">02 / PROJECTS</p><p className="text-link">Full-stack systems, automation, and agentic AI</p></div><div className="project-list">{projects.map((project, index) => <article className={`project${index === 0 ? " project-with-subprojects" : ""}`} key={project.name}><ProjectGraphic type={project.graphic} /><div className="project-copy"><p className="project-type">{project.type}</p><h2>{project.name}</h2><p>{project.description}</p><small>{project.stack}</small></div>{index === 0 && <div className="platform-projects" aria-label="AI platform applications">{platformProjects.map((app) => <section className="platform-project" key={app.title}><Image src={app.image} alt={app.imageAlt} width={app.imageWidth} height={app.imageHeight} sizes="(max-width: 800px) 100vw, 40vw" /><div><h3>{app.title}</h3><p>{app.summary}</p><ul>{app.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul><small>{app.stack.join(" | ")}</small></div></section>)}</div>}</article>)}</div></div></section>
 
-    <section className="personal-projects section-ink" id="personal-projects"><div className="wrap"><div className="section-heading"><p className="section-number">03 / PERSONAL PROJECTS</p><p className="text-link">Agentic AI and developer tooling</p></div><div className="personal-project-list">{personalProjects.map((project) => <article className="personal-project" key={project.title}><div className="personal-project-heading"><span>{project.number}</span><p>{project.label}</p></div><div className="personal-project-hero"><div><h2>{project.title}</h2><p>{project.summary}</p></div><div className="personal-project-visual"><Image src={project.image} alt={project.imageAlt} width={1536} height={1024} sizes="(max-width: 800px) 100vw, 42vw" /><div className="project-flow" aria-label={`${project.title} workflow`}>{project.flow.map((step, index) => <span key={step}>{step}{index < project.flow.length - 1 && <i>-&gt;</i>}</span>)}</div></div></div><div className="personal-project-details"><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul><div><p className="project-type">Built with</p><div className="project-tags">{project.stack.map((item) => <span key={item}>{item}</span>)}</div></div></div></article>)}</div></div></section>
+    <section className="personal-projects section-ink" id="personal-projects"><div className="wrap"><div className="section-heading"><p className="section-number">03 / PERSONAL PROJECTS</p><p className="text-link">Agentic AI and developer tooling</p></div><div className="personal-project-list">{personalProjects.map((project) => <article className="personal-project" key={project.title}><div className="personal-project-heading"><span>{project.number}</span><p>{project.label}</p></div><div className="personal-project-hero"><div><h2>{project.title}</h2><p>{project.summary}</p></div><div className="personal-project-visual"><Image src={project.image} alt={project.imageAlt} width={project.imageWidth} height={project.imageHeight} sizes="(max-width: 800px) 100vw, 42vw" /><div className="project-flow" aria-label={`${project.title} workflow`}>{project.flow.map((step, index) => <span key={step}>{step}{index < project.flow.length - 1 && <i>-&gt;</i>}</span>)}</div></div></div><div className="personal-project-details"><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul><div><p className="project-type">Built with</p><div className="project-tags">{project.stack.map((item) => <span key={item}>{item}</span>)}</div></div></div></article>)}</div></div></section>
 
-    <section className="section-sage experience" id="experience"><div className="wrap two-column experience-layout"><div><p className="section-number">04 / EXPERIENCE</p><div className="timeline">{experience.map((item) => <article key={item.company}><p className="date">{item.date}</p><div><h2>{item.role}</h2><p className="company">{item.company}</p><p>{item.description}</p></div></article>)}</div></div><ExperienceImpactGraphic /></div></section>
+    <section className="section-sand experience" id="experience"><div className="wrap two-column experience-layout"><div><p className="section-number">04 / EXPERIENCE</p><div className="timeline">{experience.map((item) => <article key={item.company}><p className="date">{item.date}</p><div><h2>{item.role}</h2><p className="company">{item.company}</p><p>{item.description}</p></div></article>)}</div></div><ExperienceImpactGraphic /></div></section>
 
-    <section className="section-cream stack" id="skills"><div className="wrap stack-layout"><div><p className="section-number">05 / TECH STACK</p><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.title}><h2>{group.title}</h2><div className="technology-list">{group.items.map((item) => <span key={item}>{item}</span>)}</div></div>)}</div></div><TechSystemGraphic /></div></section>
+    <section className="section-ink stack" id="skills"><div className="wrap stack-layout"><div><p className="section-number">05 / TECH STACK</p><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.title}><h2>{group.title}</h2><div className="technology-list">{group.items.map((item) => <span key={item}>{item}</span>)}</div></div>)}</div></div><TechSystemGraphic /></div></section>
 
-    <section className="education section-sage" id="education"><div className="wrap"><p className="section-number">06 / EDUCATION</p><EducationStats /><div className="certification-note"><p className="project-type">Certifications</p><p>Microsoft Certified: Azure DevOps (AZ-400), Azure Developer (AZ-204), Azure Fundamentals (AZ-900), and Azure Data Fundamentals (DP-900).</p></div></div></section>
+    <section className="education section-cream" id="education"><div className="wrap"><p className="section-number">06 / EDUCATION</p><EducationStats /><div className="certification-note"><p className="project-type">Certifications</p><p>Microsoft Certified: Azure DevOps (AZ-400), Azure Developer (AZ-204), Azure Fundamentals (AZ-900), and Azure Data Fundamentals (DP-900).</p></div></div></section>
 
-    <footer className="footer" id="contact"><div className="wrap"><p className="eyebrow">GET IN TOUCH</p><div className="footer-main"><h2>LET&apos;S BUILD SOMETHING RELIABLE.</h2><a className="button button-outline" href="mailto:gowrivivek07@gmail.com">Email me <Arrow /></a></div><div className="contact-links"><a href="mailto:gowrivivek07@gmail.com">gowrivivek07@gmail.com</a><a href="tel:+916303395554">+91 63033 95554</a><a href="https://www.linkedin.com/in/gowri-vivek-kandregula-4765681b0/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/vivekchinna103" target="_blank" rel="noreferrer">GitHub</a></div><div className="footer-bottom"><span>GOWRI VIVEK KANDREGULA | PYTHON BACKEND ENGINEER</span><span>IDEAS -&gt; SYSTEMS -&gt; IMPACT</span></div></div></footer>
+    <footer className="footer" id="contact"><div className="wrap"><p className="eyebrow">GET IN TOUCH</p><div className="footer-main"><h2>LET&apos;S BUILD SOMETHING RELIABLE.</h2><a className="button button-outline" href="mailto:gowrivivek07@gmail.com">Email me <Arrow /></a></div><div className="contact-links"><a href="mailto:gowrivivek07@gmail.com">gowrivivek07@gmail.com</a><a href="tel:+916303395554">+91 63033 95554</a><a href="https://www.linkedin.com/in/gowri-vivek-kandregula-4765681b0/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/vivekchinna103" target="_blank" rel="noreferrer">GitHub</a></div><div className="footer-bottom"><span>GOWRI VIVEK KANDREGULA | PYTHON FULL-STACK DEVELOPER</span><span>IDEAS -&gt; SYSTEMS -&gt; IMPACT</span></div></div></footer>
   </main>;
 }
