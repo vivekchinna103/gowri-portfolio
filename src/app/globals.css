@@ -40,7 +40,7 @@
 @media (max-width:800px) { .project-with-subprojects,.platform-projects { grid-template-columns:1fr; }.project-with-subprojects > .project-graphic,.project-with-subprojects > .project-copy { grid-column:1 / -1; } }
 
 /* Portrait-led introduction; navigation shares the hero canvas. */
-.hero.hero-editorial { position:relative; isolation:isolate; min-height:790px; height:min(900px,100svh); overflow:hidden; padding:0; color:var(--cream-text); background:#2a3d32; }
+.hero.hero-editorial { position:relative; isolation:isolate; min-height:790px; height:min(900px,100svh); overflow:hidden; padding:0; color:var(--cream-text); background:#12251a; }
 .editorial-nav { position:relative; z-index:5; display:flex; align-items:center; justify-content:space-between; gap:2rem; height:104px; background:transparent; }
 .editorial-wordmark { font-family:"Times New Roman",Georgia,serif; font-size:1.7rem; font-weight:400; letter-spacing:-.045em; white-space:nowrap; }
 .editorial-wordmark > span { color:#a4bf66; }
@@ -51,7 +51,7 @@
 .editorial-contact > span { display:grid; place-items:center; width:2.5rem; height:2.5rem; border-radius:50%; background:#a6c944; color:#fffaf5; font-size:1.4rem; transition:transform .2s ease; }
 .editorial-contact:hover > span { transform:rotate(45deg); }
 .editorial-portrait { position:absolute; z-index:0; inset:0; pointer-events:none; background:url('/images/gowri-hero-sunkissed.jpg') no-repeat center / cover; }
-.hero-editorial::after { content:""; position:absolute; z-index:1; inset:0; pointer-events:none; background:linear-gradient(90deg,rgba(21,41,30,.14),transparent 36%,transparent 68%,rgba(21,41,30,.16)),linear-gradient(to top,rgba(21,41,30,.4),transparent 34%); }
+.hero-editorial::after { content:""; position:absolute; z-index:1; inset:0; pointer-events:none; background:linear-gradient(90deg,#12251a 0%,#12251a 28%,rgba(18,37,26,.82) 39%,rgba(18,37,26,.18) 53%,transparent 67%,rgba(18,37,26,.62) 84%,#12251a 100%),linear-gradient(to top,rgba(10,28,18,.46),transparent 34%); }
 .editorial-content { position:absolute; z-index:2; inset:104px 0 95px; display:flex; align-items:center; justify-content:space-between; pointer-events:none; }
 .editorial-heading { align-self:center; padding-bottom:1rem; }
 .editorial-greeting { margin:0 0 1.8rem; color:#c5dcaa; font-family:"Times New Roman",Georgia,serif; font-size:clamp(1.6rem,2.1vw,2.1rem); letter-spacing:-.035em; }
@@ -82,7 +82,7 @@
   .editorial-heading { padding:0; align-self:flex-start; }.editorial-greeting { font-size:1.45rem; margin-bottom:1rem; }
   .editorial-heading h1 { font-size:clamp(3.6rem,13vw,5rem); }
   .editorial-portrait { background-size:auto 58%; background-position:center top; }
-  .hero-editorial::after { background:linear-gradient(to bottom,transparent 29%,rgba(42,61,50,.64) 46%,#2a3d32 64%); }
+  .hero-editorial::after { background:linear-gradient(90deg,#12251a 0%,transparent 24%,transparent 76%,#12251a 100%),linear-gradient(to bottom,transparent 24%,rgba(18,37,26,.74) 46%,#12251a 64%); }
   .editorial-intro { position:relative; width:min(100%,360px); align-self:flex-start; margin:0; padding:0; background:transparent; }
   .editorial-statement { font-size:1.65rem; margin-bottom:.7rem; }.editorial-statement br { display:block; }
   .editorial-intro > p:not(.editorial-statement) { font-size:.84rem; line-height:1.6; }.editorial-work-link { margin-top:1rem; }
